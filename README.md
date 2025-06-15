@@ -3,7 +3,7 @@
 A Django web application using PostgreSQL, ready for deployment on [Render]([https://render.com](https://lockbox-zkgy.onrender.com/)).
 
 <p align="center">
-  <img src="frontend/static/logo.png" alt="lockbox-logo.png" width="120"/>
+  <img src="lockbox-logo.png" alt="Lockbox" width="120"/>
 </p>
 
 ---
