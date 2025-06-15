@@ -6,7 +6,6 @@ A Django web application using PostgreSQL LockBox deployed on [Render](https://l
   <img src="lockbox-logo.png" alt="Lockbox" width="120"/>
 </p>
 
----
 
 ## 🚀 Features
 
