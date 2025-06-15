@@ -1,6 +1,6 @@
 # Lockbox - Secure Password Manager
 
-A Django web application using PostgreSQL-LockBox deployed on [Render](https://lockbox-zkgy.onrender.com/).
+A Django web application using PostgreSQL-LockBox deployed on Render [LockBox](https://lockbox-zkgy.onrender.com/).
 
 <p align="left">
   <img src="lockbox-logo.png" alt="Lockbox" width="120"/>
