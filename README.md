@@ -20,7 +20,7 @@ A Django web application using PostgreSQL-LockBox deployed on [Render](https://l
 ## 🗂️ Project Structure
 
 ```
-lc/
+lockbox/
 ├── .gitignore
 ├── build.sh
 ├── frontend/
