@@ -1,6 +1,6 @@
 # Lockbox Django Web Application
 
-A Django web application using PostgreSQL, deployed on [Render](https://lockbox-zkgy.onrender.com/).
+A Django web application using PostgreSQL LockBox deployed on [Render](https://lockbox-zkgy.onrender.com/).
 
 <p align="center">
   <img src="lockbox-logo.png" alt="Lockbox" width="120"/>
