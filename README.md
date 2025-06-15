@@ -42,7 +42,7 @@ lockbox/
 ### 1. Clone the repository
 
 ```bash
-git clone [https://github.com/<your-username>/lockbox.git](https://github.com/ishikasingh777/lockbox.git)
+git clone https://github.com/ishikasingh777/lockbox.git
 cd lockbox
 ```
 
