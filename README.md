@@ -2,6 +2,8 @@
 
 A Django web application using PostgreSQL, ready for deployment on [Render]([https://render.com](https://lockbox-zkgy.onrender.com/)).
 
+![Lockbox Logo](frontend/static/lockbox-logo.png)
+
 ---
 
 ## 🚀 Features
