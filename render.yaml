@@ -2,7 +2,7 @@ services:
   - type: web
     name: lockbox
     env: python
-    buildCommand: "sh /opt/render/project/src/build.sh"
+    buildCommand: "bash build.sh"
     startCommand: "gunicorn lockbox.wsgi:application"
     envVars:
       - key: DATABASE_URL
