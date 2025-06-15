@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="auth-card">
+  <h2 class="auth-title">Login</h2>
+  <hr>
+  <form method="post">
+    {% csrf_token %}
+    {% if form.errors %}
+      <ul class="errorlist">
+        {% for field in form %}
+          {% for error in field.errors %}
+            <li>{{ field.label }}: {{ error }}</li>
+          {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <div class="auth-field">
+      <label for="{{ form.username.id_for_label }}">Username</label>
+      {{ form.username|add_class:"auth-input" }}
+    </div>
+    <div class="auth-field">
+      <label for="{{ form.password.id_for_label }}">Password</label>
+      {{ form.password|add_class:"auth-input" }}
+    </div>
+    <button type="submit" class="auth-btn">Login</button>
+  </form>
+  <div class="auth-footer">
+    <span>Don't Have an Account</span>
+    <a href="{% url 'register' %}" class="auth-link">Signup</a>
+  </div>
+</div>
+{% endblock %} 

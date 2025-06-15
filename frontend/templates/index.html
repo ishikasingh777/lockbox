@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lock Box - Secure Password Manager</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Main App Container (Visible after login) -->
+    {% if user.is_authenticated %}
+        <div id="app-container" class="container">
+            <!-- Header -->
+            <header>
+                <nav>
+                    <div class="logo">
+                        <img src="{% static 'lockbox-logo.png' %}" alt="LockBox Logo" class="logo-img">
+                        <span>Lock Box</span>
+                    </div>
+                    <div class="nav-links">
+                        <button onclick="showSavedPasswords()"><i class="fas fa-key"></i> Saved Passwords</button>
+                        <button onclick="showContact()"><i class="fas fa-envelope"></i> Contact</button>
+                        <button onclick="showHelp()"><i class="fas fa-question-circle"></i> Help</button>
+                        <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="logout-link" style="background:none; border:none; color:inherit; cursor:pointer;">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+            </header>
+
+            <!-- Main Content -->
+            <main>
+                <div class="password-generator">
+                    <div style="text-align:left; margin-bottom: 10px;">
+                        <h2 id="display-username" style="margin:0;"></h2>
+                    </div>
+                    <h2>Password Generator</h2>
+                    <div class="password-display">
+                        <input type="text" id="generated-password" placeholder="Type or generate a password">
+                        <button onclick="copyPassword()" title="Copy to clipboard"><i class="fas fa-copy"></i></button>
+                        <button id="undo-btn" onclick="undoPassword()" disabled title="Undo"><i class="fas fa-undo"></i></button>
+                        <button id="redo-btn" onclick="redoPassword()" disabled title="Redo"><i class="fas fa-redo"></i></button>
+                    </div>
+                    
+                    <div class="password-options">
+                        <div class="option">
+                            <label>Password Length:</label>
+                            <input type="range" id="length" min="8" max="32" value="16">
+                            <span id="length-value">16</span>
+                        </div>
+                        <div class="option">
+                            <label><input type="checkbox" id="uppercase" checked> Uppercase</label>
+                            <label><input type="checkbox" id="lowercase" checked> Lowercase</label>
+                            <label><input type="checkbox" id="numbers" checked> Numbers</label>
+                            <label><input type="checkbox" id="symbols" checked> Symbols</label>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button onclick="generatePassword()" class="primary-btn">Generate</button>
+                        <button onclick="savePassword()" class="save-btn">Save Password</button>
+                    </div>
+
+                    <div id="password-strength" class="strength-meter">
+                        <div class="strength-bar"></div>
+                        <span class="strength-text">Password Strength: </span>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Saved Passwords Modal -->
+            <div id="saved-passwords-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h3>Saved Passwords</h3>
+                    <div id="saved-passwords-list"></div>
+                    <button onclick="closeModal('saved-passwords-modal')">Close</button>
+                </div>
+            </div>
+
+            <!-- Contact Modal -->
+            <div id="contact-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h3>Contact Us</h3>
+                    <p>Email: support@lockbox.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                    <button onclick="closeModal('contact-modal')">Close</button>
+                </div>
+            </div>
+
+            <!-- Help Modal -->
+            <div id="help-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h3>Help & FAQ</h3>
+                    <div class="faq">
+                        <h4>How do I generate a strong password?</h4>
+                        <p>Click the "Generate Password" button or use the AI generator for enhanced security.</p>
+                        
+                        <h4>How do I save a password?</h4>
+                        <p>After generating a password, click the "Save Password" button to store it securely.</p>
+                        
+                        <h4>Is my data secure?</h4>
+                        <p>Yes, all passwords are encrypted and stored securely using industry-standard encryption.</p>
+                    </div>
+                    <button onclick="closeModal('help-modal')">Close</button>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container" style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:80vh;">
+            <img src="{% static 'lockbox-logo.png' %}" alt="LockBox Logo" style="width:120px; height:120px; margin-bottom:20px;">
+            <h1 style="font-size:2.8rem; margin-bottom:10px; color:#222;">Welcome to Lock Box!</h1>
+            <h2 style="font-size:2rem; font-weight:600; color:#333; margin-bottom:0;">
+                Please <a href="{% url 'login' %}" style="font-size:2rem; font-weight:700; color:#4b2aad; text-decoration:underline;">login</a> to use Lock Box.
+            </h2>
+        </div>
+    {% endif %}
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
