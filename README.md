@@ -1,20 +1,23 @@
-# Lockbox - Secure Password Manager
+# 🔐 Lockbox – Secure Password Manager
 
-A Django web application using PostgreSQL-LockBox deployed on Render [LockBox](https://lockbox-zkgy.onrender.com/).
+A secure and simple Django web application that lets you **store all your passwords in one place**, protected by a **single master password**. Lockbox ensures that your sensitive data is securely encrypted and only accessible to you.
 
 <p align="left">
-  <img src="lockbox-logo.png" alt="Lockbox" width="120"/>
+  <img src="lockbox-logo.png" alt="Lockbox Logo" width="120"/><br>
+  <a href="https://lockbox-zkgy.onrender.com/">🔗 Visit Live Deployment</a>
 </p>
 
 
 ## 🚀 Features
 
-- Django 5.2.2
-- PostgreSQL database
-- REST API with Django REST Framework
-- CORS support
-- Static files served with Whitenoise
-- Production-ready settings for Render
+- 🔑 **Master Password System** – Only remember one password to access all your saved credentials.
+- 🔐 **Secure Storage** – Passwords are encrypted and stored securely in a PostgreSQL database.
+- 📦 **RESTful API** – Built using Django REST Framework.
+- 🌍 **CORS Support** – Frontend and API can run on different domains securely.
+- 📁 **Static Files Served with Whitenoise** – For fast and easy static file handling in production.
+- 🛡️ **Production-Ready Configuration** – Optimised for deployment on Render.
+- 💾 **PostgreSQL Database** – Reliable and scalable relational database.
+- ⚙️ **Django 5.2.2** – Built with the latest version of Django.
 
 
 ## 🗂️ Project Structure
