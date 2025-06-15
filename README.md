@@ -2,7 +2,7 @@
 
 A Django web application using PostgreSQL LockBox deployed on [Render](https://lockbox-zkgy.onrender.com/).
 
-<p align="center">
+<p align="left">
   <img src="lockbox-logo.png" alt="Lockbox" width="120"/>
 </p>
 
