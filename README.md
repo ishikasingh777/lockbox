@@ -16,7 +16,6 @@ A Django web application using PostgreSQL LockBox deployed on [Render](https://l
 - Static files served with Whitenoise
 - Production-ready settings for Render
 
----
 
 ## 🗂️ Project Structure
 
@@ -37,7 +36,6 @@ lc/
 └── (other Django apps, e.g., core/, api/, etc.)
 ```
 
----
 
 ## ⚙️ Local Development
 
@@ -81,10 +79,8 @@ python manage.py runserver
 
 Visit [http://localhost:8000](http://localhost:8000) to view the app.
 
----
 
 ## 📄 License
 
 MIT License
 
----
